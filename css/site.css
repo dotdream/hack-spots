@@ -10,7 +10,7 @@ img {width: 100%;}
 p a, a {color: #333; text-decoration: none; padding-bottom: 0px; border-bottom: 1px #FD9393 solid;}
 a:hover {color: #47CCFC;}
 small {padding: 10px 0px; font-size: 0.8em;}
-p {margin: 0px; padding: 0px; font-size: 1em;}
+p {margin: 0px; padding: 0px; font-size: 12px;}
 li {line-height: 19px; font-size: 12px;}
 ol {line-height: 24px;}
 a.button {border: none;}
@@ -40,7 +40,7 @@ ul.nav li a:hover {border-bottom: 1px #FD9393 solid;}
 .button:hover {background: #B9FCFC; color: #47CCFC;}
 .fauxButton {padding: 5px 5px; background-color: #FF4646; font-size: 11px; color: #fff; display: inline;}
 .fauxButton .selected {background-color: #FF4646;}
-.colorText {font-size: 1.1em color: #820000; text-transform: uppercase; font-weight: 700; margin: 0.2em 0em;}
+.colorText {font-size: 1em color: #820000; text-transform: uppercase; font-weight: 700; margin: 0.3em 0em;}
 
 .leaflet-popup-content h2 {font-family: Lato; font-size: 14px; text-transform: uppercase;}
 
