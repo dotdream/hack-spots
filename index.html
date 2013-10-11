@@ -37,15 +37,8 @@
 				<div id="latestSpot"></div>
 				<div id="selectedSpot"></div>
 			</div>
-			<div id="map"></div>
 		</div>
 		
-		<div class="container">
-			<input id="tableFilter" type="text" placeholder="filter by.."></input>
-			<span class="clear button">Clear</span> <span class="resetMap button">Reset Map</span>
-			<span class="noMatches">no matches</span>
-			<div id="hackSpotsTable"></div>
-		</div> 
 		<div id="info" class="container">
 			
 			<div id="theNumberofSpots"></div>
@@ -56,57 +49,27 @@
 
 	<script id="hackSpotsTable" type="text/html">
 		<table>
-		<tr><th class="tHeader">Channel</th><th class="tHeader">Activity</th><th class="tHeader">Info (URL)</th><th class="tHeader">Dates Running</th><th class="tHeader">Reach</th><th class=""></th></tr>
+		<tr><th class="tHeader">Channel</th><th class="tHeader">Activity</th><th class="tHeader">Info (URL)</th><th class="tHeader">Dates Running</th><th class="tHeader">Reach (and feedback)</th><th class=""></th></tr>
 		  {{#rows}}
-		  	<tr id="{{rowNumber}}" class="spotRow"><td>{{name}}</td><td>{{address}}</td><td>{{city}}</td><td>{{state}}</td><td>{{country}}</td><td><a class="button" href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">G Map</a> <a class="button" href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Yelp</a></td></tr>
-		  	<tr class="hideRow"><td>wifi: {{wifipassword}}</td></tr>
+		  	<tr id="{{rowNumber}}" class="spotRow"><td>{{channel}}</td><td>{{activity}}</td><td>{{link}}</td><td>{{when}}</td><td>{{reach}}</td></tr>
 		  {{/rows}}
 	  </table>
 	</script>
 
-	<script id="latestSpot" type="text/html">
-			{{#rows}}
-				<h4 class="fauxButton">MOST RECENT SPOT</h4>
-				<h2>{{name}}</h2>
-				<p class="colorText">{{address}}<p>
-				<p class="colorText">{{city}}, {{state}}</p>
-				<ul>
-			  	<li><span class="category">Wifi:</span> {{wifipassword}}</li>
-			  	<li><span class="category">Outlets:</span> {{outlets}}</li>
-			  	<li><span class="category">Couch:</span> {{couch}}</li>
-			  	<li><span class="category">Large Table:</span> {{largetable}}</li>
-			  	<li><span class="category">Outdoor Seating:</span> {{outdoorseating}}</li>
-			  	<li><span class="category">Brewing:</span> {{brewing}}</li>
-			  	<li><span class="category">Contributed By:</span> <a href="http://www.twitter.com/{{contributerstwitter}}" target="_blank">@{{contributerstwitter}}</a></li>
-		  	</ul>
-		  	<ul>
-		  		<li><a href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">View in Google Maps</a></li>
-		  		<li><a href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Find on Yelp</a></li>
-		  	</ul>
-		  {{/rows}}
-	</script>
-
 	<script id="theNumberofSpots" type="text/html">
-		<p><strong><span class="red-text">{{numberOfSpots}}</span> hack spots strong!</p>
+		<p><strong><span class="red-text">{{numberOfSpots}}</span> service awareness efforts currently active</p>
 	</script>
 
 	<script id="selectedSpot" type="text/html">
 		{{#rows}}
-			<h4 class="fauxButton">SELECTED SPOT</h4>
-			<h2>{{name}}</h2>
-			<p class="colorText">{{address}}<p>
-			<p class="colorText">{{city}}, {{state}}</p>
+			<h4 class="fauxButton">SELECTED ACTIVITY</h4>
+			<h2>{{activity}}</h2>
+			<p class="colorText">{{channel}}<p>
 			<ul>
-		  	<li><span class="category">Wifi:</span> {{wifipassword}}</li>
-		  	<li><span class="category">Outlets:</span> {{outlets}}</li>
-		  	<li><span class="category">Couch:</span> {{couch}}</li>
-		  	<li><span class="category">Large Table:</span> {{largetable}}</li>
-		  	<li><span class="category">Outdoor Seating:</span> {{outdoorseating}}</li>
-		  	<li><span class="category">Brewing:</span> {{brewing}}</li>
-	  	</ul>
-	  	<ul>
-	  		<li><a href="https://maps.google.com/maps?q={{address}},{{city}},{{state}}" target="_blank">View in Google Maps</a></li>
-	  		<li><a href="http://www.yelp.com/search?find_desc={{name}}&find_loc={{city}},{{state}}" target="_blank">Find on Yelp</a></li>
+		  	<li><span class="category">Link or info source:</span> {{link}}</li>
+		  	<li><span class="category">Dates running:</span> {{when}}</li>
+		  	<li><span class="category">Reach or feedback:</span> {{reach}}</li>
+		  	<li><span class="category">IT Services contact:</span> {{contact}}</li>
 	  	</ul>
 	  {{/rows}}
 	</script>
